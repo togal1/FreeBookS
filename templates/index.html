@@ -1,0 +1,128 @@
+﻿{% extends "plantilla.html" %}
+   {%block contentido%}
+           
+                <aside id="publicidad">
+                   <img src="../static/_img/banner/libro.jpg" alt="libro">
+                    <div class="contenedor">
+                        <h2>Gran feria del libro</h2>
+                        <p>¡Vení a disfrutar de un día inolvidable!</p>
+                         <a href="#" title="leer más">Leer más</a>
+                    </div>
+                </aside>
+                 {% if libros %}
+                 <aside id="modalImg" class="modalImg">
+                             <div class="contModalImg">
+
+                              {% set titulo %}<h2 id='imprime'></h2>{% endset %}
+                              {% set descrip %}<article id='des'></article>{% endset %}
+
+                                 {{titulo}}
+                                 <div class='cerrarImg' onClick="cerrar()">X</div>
+                <div class="silderImg">
+                                  
+                           <ul>
+                             <li>
+                                  <input type="radio" id="subBoton1" name="sradio" checked>
+                                  <label for="subBoton1"></label>
+                                  {% set imgen1 %}<img id='imgenes1' src=''  alt='' >{% endset %}
+                                       {{imgen1}}
+                             </li>
+                              <li>
+                                  <input type="radio" id="subBoton2" name="sradio">
+                                  <label for="subBoton2"></label>
+                                    {% set imgen2 %}<img id='imgenes2' src=''  alt='' >{% endset %}
+                                       {{imgen2}}
+                             </li>
+                             <li>
+                                   <input type="radio" id="subBoton3" name="sradio">
+                                    <label for="subBoton3"></label>
+                                  {% set imgen3 %}<img id='imgenes3' src=''  alt='' >{% endset %}
+                                       {{imgen3}}
+                             </li>
+                           </ul>
+                          
+                   </div>
+
+                                 {{descrip}}
+
+
+                          
+                     
+                        </div>
+                    </aside> 
+                {% endif %}
+                    
+                       <div id="caja-slaider">
+                           <div id="slaider" >
+                        {% if libros %}
+                                {%for libro in libros %}
+							  <section>
+                                  {% set libroT  =libro.4   %}
+                                  {% set libroD  =libro.9   %}
+                                  {% set libroF1 =libro.10  %}
+                                  {% set libroF2 =libro.11  %}
+                                  {% set libroF3 =libro.12  %}
+
+                                           <h2>{{libroT  | truncate (30)}}  </h2>
+
+                                           <img src= "{{libroF1}}" alt="libro" onClick="return myFunction('{{libroT}}','{{libroF1}}','{{libroF2}}','{{libroF3}}','{{libroD}}');">
+
+                                           <div class="contGusta"><a href="likes?gusta=1&libro_id={{libro.0}}"  title="me gusta" class="btn-gusta"></a><a href="likes?gusta=2&libro_id={{libro.0}}" title="no me gusta" class="btn-noGusta"></a></div>
+
+
+                                           <p>{{libroD | truncate (150) }}</p>
+                </section>
+
+					            {% endfor %}
+                                      </div>
+
+                        <div id="btn-prev" onClick="botonPrev()">&#60;</div>
+                        <div id="btn-next" onClick="botonNext()">&#62;</div>
+                    </div>
+                        {% else %}
+                                        <section>
+
+                                             <h2>No hay más libros en este momento</h2>
+
+
+                                                          <img src= "../static/_img/iconos/noHayFoto.png" alt="libro" >
+
+                                             <div class="contGusta"></div>
+
+
+                                             <div align="center">No olvide volver pronto, nuestros usuarios siempre están ingresando nuevos títulos !!!   </div>
+                                         </section>
+                                      </div>
+
+
+                    </div>
+                         {% endif %}
+
+
+
+
+                        <section id='destacados'>
+                            <h3> Los libros más buscados </h3>
+                               <div class="contenedor">
+                               <div class="destaca_info">
+                                    <img src="../static/_img/fotos/1001.jpg" alt="">
+                                     <h4>Los 100</h4>
+                              </div>
+                              <div class="destaca_info">
+                                     <img src="../static/_img/fotos/cronicas1.jpg" alt="">
+                                    <h4>Como alcanzar el exito ...</h4>
+                            </div>
+                            <div class="destaca_info">
+                                      <img src="../static/_img/fotos/capote3.jpg" alt="">
+                                    <h4>A sangre fria</h4>
+                           </div>
+                          <div class="destaca_info">
+                                 <img src="../static/_img/fotos/mario1.jpg" alt="">
+                                 <h4>Testigo de uno mismo</h4>
+                 </div>
+              </div>
+                </section>
+                
+
+
+    {%endblock contentido%}

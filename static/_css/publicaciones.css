@@ -1,0 +1,82 @@
+#publicaciones, #publicaciones2 {
+	 margin:auto;
+	 margin-bottom:10px;
+     width: 85%;
+     max-width: 900px;
+	 position:relative;
+	 overflow: hidden;
+	}
+
+#publicaciones h3, #publicaciones2 h3{
+	text-align: left;
+	
+	}
+#publicaciones  h4, #publicaciones2  h4{
+	text-align: center;
+	
+	}
+	#publicaciones a, #publicaciones2 a{
+	text-decoration: none;
+	font-size:16px;
+	padding-left:20px;
+	}
+
+#publicaciones .contenedor, #publicaciones2 .contenedor{
+	display:flex;
+	display: -webkit-flex; 
+	display:-moz-flex;
+	display:-ms-flex;
+	display:-o-flex;
+	width:1000%;
+	
+	
+	}
+
+#publicaciones article, #publicaciones2 article{
+	margin:6px;
+	padding:20px 0 10px 0;
+	border:#9BB29E double 1px;
+	box-shadow: 4px 4px 4px rgba(13,53,23,.9) ; 
+     -moz-box-shadow: 4px 4px 4px rgba(13,53,23,.9) ; 
+    -webkit-box-shadow:4px 4px 4px rgba(13,53,23,.9) ; 
+    -ms-box-shadow: 4px 4px 4px rgba(13,53,23,.9) ; 
+	-o-box-shadow: 4px 4px 4px rgba(13,53,23,.9); 
+	}
+
+#publicaciones img, #publicaciones2 img{
+	display:block;
+	width:100%;
+	height:100%;
+	max-width:220px;
+	min-height:150px;
+	max-height:151px;
+	}
+	
+#btn_prev, #btn_next,#btn_prev2, #btn_next2 {
+   opacity: 0.2;
+   filter: alpha(opacity=20); /* For IE8 and earlier */
+   width: 40px;
+   height: 40px;
+   background: rgb(255, 255, 255);
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   line-height: 40px;
+   font-size: 30px;
+   font-weight: bold;
+   text-align: center;
+   border-radius: 50%;
+   font-family: monospace;
+   cursor: pointer;
+}
+#btn_prev:hover, #btn_next:hover,#btn_prev2:hover, #btn_next2:hover {
+	opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+
+}
+#btn_next,#btn_next2 {
+	right: 10px;
+}
+#btn_prev, #btn_prev{
+	left: 10px;
+}

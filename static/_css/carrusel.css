@@ -1,0 +1,179 @@
+.carrusel{
+	width:95%;
+	margin:auto;
+	overflow:hidden;
+	}
+
+.carrusel ul{
+	padding:0;
+	display:flex;
+	display: -webkit-flex; 
+	display:-moz-flex;
+	display:-ms-flex;
+	display:-o-flex;
+	width:300%;
+	animation:cambio 20s infinite alternate;
+	animation-timing-function:ease-in;
+	}
+
+.carrusel li{
+	width:100%;
+	list-style:none;
+	}
+
+.tex1{
+	animation:tx1 20s infinite alternate;
+	animation-timing-function:ease-in;
+	}
+
+.tex2{
+	animation:tx2 20s infinite alternate;
+	animation-timing-function:ease-in;
+	}
+
+.tex3{
+	animation:tx3 20s infinite alternate;
+	animation-timing-function:ease-in;
+	}
+
+
+@keyframes cambio{
+	0%{
+		margin-left:0%;
+		
+	
+	}
+	30%{
+		margin-left:0%;
+		
+
+	}
+	35%{
+		margin-left:-100%;
+	}
+	55%{
+		margin-left:-100%;
+	}
+	70%{
+		margin-left:-200%;
+	}
+	100%{
+		margin-left:-200%;
+	}
+
+}
+
+@keyframes tx1{
+	0%{
+		visibility:visible;
+		 opacity: 1.0;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+	
+	}
+	10%{
+		visibility:visible;
+	 opacity: 1.0;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+	
+   
+	}
+	35%{
+		visibility:hidden;
+		 opacity: 0.0;
+    filter: alpha(opacity=0); /* For IE8 and earlier */
+	}
+	55%{
+		visibility:hidden;
+	 opacity: 0.0;
+    filter: alpha(opacity=0); /* For IE8 and earlier */
+	}
+	70%{
+		visibility:hidden; opacity: 0.0;
+    filter: alpha(opacity=0); /* For IE8 and earlier */
+	}
+
+	100%{
+		visibility:hidden; 
+		opacity: 0.0;
+    filter: alpha(opacity=0); /* For IE8 and earlier */
+		
+	}
+
+}
+
+@keyframes tx2{
+	0%{
+		visibility:hidden;
+		
+		opacity: 0.0;
+    filter: alpha(opacity=0); /* For IE8 and earlier */
+	}
+	35%{
+		visibility:hidden;
+		opacity: 0.0;
+    filter: alpha(opacity=0); /* For IE8 and earlier */
+
+	}
+	36%{
+		visibility:visible;
+		 opacity: 1.0;
+    filtr: alpha(opacity=100); /* For IE8 and earlier */
+	}
+	55%{
+		visibility:visible;
+		 opacity: 1.0;
+    filtr: alpha(opacity=100); /* For IE8 and earlier */
+	}
+	68%{
+		visibility:hidden;
+		opacity: 0.0;
+    filter: alpha(opacity=0); /* For IE8 and earlier */
+	}
+
+	100%{
+		visibility:hidden;
+	
+		
+	}
+}
+	
+	@keyframes tx3{
+   0%{
+		  visibility:hidden;
+		opacity: 0.0;
+    filter: alpha(opacity=0); /* For IE8 and earlier */
+		
+	
+	}
+	35%{
+		  visibility:hidden;
+		opacity: 0.0;
+    filter: alpha(opacity=0); /* For IE8 and earlier */
+		
+
+	}
+	36%{
+		  visibility:hidden;
+		opacity: 0.0;
+    filter: alpha(opacity=0); /* For IE8 and earlier */
+		
+	}
+	68%{
+	     visibility:hidden;
+		opacity: 0.0;
+    filter: alpha(opacity=0); /* For IE8 and earlier */
+	}
+	69%{
+		visibility:visible;
+		 opacity: 1.0;
+    filtr: alpha(opacity=100); /* For IE8 and earlier */
+	}
+
+	100%{
+		visibility:visible;
+		 opacity: 1.0;
+    filtr: alpha(opacity=100); /* For IE8 and earlier */
+		
+	}
+
+}

@@ -1,0 +1,238 @@
+
+@charset "utf-8";
+
+/* CSS Documento */
+.perfilContenedor{
+	margin-top: 50px;
+}
+.perfil {
+	padding: 5px 16px 50px 16px;
+	border-radius: 10px;
+	border: 1px solid var(--menuUser);
+	box-shadow: 10px 10px 5px -9px rgba(0, 0, 0, 0.24);
+}
+
+.perfil .derformulario {
+	display: block;
+	float: right;
+}
+
+.derformulario #archivos {
+	display: inline-block;
+	right: 0;
+	padding: 0px;
+	width: 110px;
+	height: 110px;
+	border-radius: 50%;
+	position: relative;
+}
+
+.derformulario input[type="file"] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.derformulario embed {
+	width: 110px;
+	height: 110px;
+	border-radius: 50%;
+}
+
+.perfil .izqformulario {
+	display: block;
+	width: 80%;
+}
+
+.izqformulario h3,
+.izqformulario h4 {
+	text-align: center;
+	color: var(--colorTexto);
+}
+
+.izqformulario h3 {
+	font-size: 2.5em;
+}
+
+.izqformulario h4 {
+	margin: 1em;
+}
+
+.izqformulario label {
+	display: inline-block;
+}
+
+.izqformulario input[type=text],
+.izqformulario input[type=email],
+.izqformulario input[type=date],
+.izqformulario input[type=number],
+.izqformulario input[type=tel] {
+	position: relative;
+	right: 0;
+	margin: 8px 0;
+	box-sizing: border-box;
+}
+
+input[type=text]:focus,
+input[type=date]:focus,
+select:focus,
+textarea:focus,
+input[type=number]:focus,
+input[type=tel]:focus,
+input[type=email]:focus {
+	border: 3px solid #555;
+}
+
+.izqformulario select {
+	cursor: pointer;
+	position: relative;
+	right: 0;
+	padding: 8px;
+	margin: 6px 0;
+	box-sizing: border-box;
+}
+
+.izqformulario input[type=submit] {
+	background: var(--colorPagina);
+	color: var(--colorBlanco);
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: right;
+}
+
+.izqformulario input[type=submit]:hover {
+	background: var(--colorBotonHover);
+}
+
+.cajaDes {
+	display: inline-block;
+	position: relative;
+	left: 45%;
+}
+
+.marg {
+	margin-bottom: .5em;
+}
+
+.t0 {
+	width: 14%;
+	height: 20px;
+	;
+}
+
+.t1 {
+	width: 19%;
+	height: 20px;
+}
+
+.t2 {
+	width: 70px;
+	height: 20px;
+}
+
+.t3 {
+	margin-left: 5.3%;
+}
+
+.inputt1 {
+	width: 80%;
+	padding: 10px;
+}
+
+.inputt2 {
+	width: 10%;
+	padding: 8px;
+}
+
+.inputt3 {
+	padding: 8px;
+}
+
+.inputt4 {
+	width: 18%;
+}
+
+.inputt5 {
+	width: 80%;
+}
+.inputt6{
+	width: 80%;
+	padding: 10px;
+}
+
+input[type=text]:focus.inputt6{
+ border: none;
+ width: 80%;
+ padding: 10px;
+}
+
+
+.exito{
+top:18px;
+height:25px;
+font-size:25px;
+color:green;
+
+}
+.error{
+top:18px;
+height:25px;
+font-size:25px;
+color:red;
+}
+
+@media screen and (max-width: 1024px) {
+	.izqformulario input[type=submit] {
+		width: 100%;
+		margin: 0;
+		float: none;
+	}
+	.izqformulario label {
+		display: none;
+	}
+	.perfil .derformulario {
+		margin: auto;
+		float: none;
+	}
+	.izqformulario h3 {
+		font-size: 1.5em;
+	}
+	.inputt1,
+	.inputt2,
+	.inputt3,
+	.inputt4 {
+		width: 100%;
+	}
+	.inputt1,
+	.inputt2,
+	.inputt4,
+	.inputt4 {
+		padding: 5px;
+	}
+	.marg {
+		margin-bottom: .3em;
+	}
+	.noVisible {
+		display: none;
+	}
+	.derformulario embed,
+	.perfil #archivos {
+		width: 70px;
+		height: 70px;
+		padding: 0;
+	}
+	.derformulario input[type="file"] {
+		width: 60%;
+		height: 60%;
+	}
+}
+
+

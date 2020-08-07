@@ -1,0 +1,216 @@
+{% extends "plantilla2.html" %}
+   {%block contentido2%}
+
+        <div id="caja-contenedora">
+            <div class="menu-bar" onClick="menuBar()"> &#x2611; </div>
+
+<!-- ................................................Empieza tabla................................................. -->
+
+            <div class="tabla">
+
+                <h2>Mi Perfil</h2>
+
+                <div class="perfilContenedor">
+                    <form action="/datosUser" method="post" enctype="multipart/form-data" class="perfil">
+                        {% if msj!='' %}
+                             <div class="t1 exito" >{{msj}}</div>
+                        {% else %}
+                               <div class="t1 error" id="error"></div>
+                        {% endif %}
+                        <div class="derformulario">
+
+                            <div id="archivos">
+
+                                <div id="visor">
+                                    <label>
+                                        <embed id="cargar0" src="{{session['foto']}}">
+                                    </label>
+                                </div>
+
+                                <input type="file" id="img0" class="imgSubir" name="img[0]" accept="image/png, image/jpeg, image/gif" onChange="previsulizar(0)">
+
+                            </div>
+
+                        </div>
+
+                        <div class="izqformulario">
+                            <h3>{{session['username']}}</h3>
+                            <h4 class="noVisible">{{session['email']}}</h4>
+                           {% if session['activo'] ==1 %}
+                                     <p>
+                                        <label  class="t1 ">Primer Nombre</label>
+                                        <input type="text"  class="inputt1"  readonly="readonly" value="{{session['nombre']}}"/>
+
+                                    </p>
+                                    <p>
+                                        <label class="t1">Primer Apellido</label>
+                                        <input type="text"  class="inputt1 " readonly="readonly" value="{{session['apellido']}}"/>
+
+                                    </p>
+
+                            {% else %}
+                                    <p>
+                                        <label for='nom1 ' class="t1 ">Primer Nombre</label>
+                                        <input type="text" name="nom1" id="nom1 " placeholder=" {% if session['nombre']=='sin datos' %}Primer Nombre {% else %} {{session['nombre']}}{% endif %}" class="inputt1" autofocus autocomplete='on' required />
+
+                                    </p>
+
+
+
+                                    <p>
+                                        <label for='ape1' class="t1">Primer Apellido</label>
+                                        <input type="text" name="ape1" id="ape1" class="inputt1 " placeholder=" {% if session['apellido']=='sin datos' %}Primer Apellido {% else %} {{session['apellido']}}{% endif %}" autofocus autocomplete='on'  required />
+
+                                    </p>
+
+
+                            {% endif %}
+                            {% if session['nombre2']=='sin datos' %}
+
+                                 <p>
+                                            <label for='nom2' class="t1 ">Segundo Nombre</label>
+                                            <input type="text" name="nom2" id="nom2" class="inputt1 noVisible" readonly="readonly" placeholder="Segundo Nombre:" />
+
+                                </p>
+                            {% else %}
+                                 <p>
+                                            <label class="t1 ">Segundo Nombre</label>
+                                            <input type="text"  class="inputt1 noVisible" readonly="readonly"  value=" {{session['nombre2']}}" />
+                                             <input id="nom2" name="nom2" type="hidden" value="">
+                                </p>
+
+                            {% endif %}
+                            {% if session['apellido2']=='sin datos' %}
+
+                                <p>
+                                        <label for='ape2' class="t1">Segundo Apellido</label>
+                                        <input type="text" name="ape2" id="ape2" class="inputt1 noVisible" placeholder="Segundo Apellido:" />
+
+                                 </p>
+                            {% else %}
+                                 <p>
+                                            <label  class="t1 ">Segundo Apellido</label>
+                                            <input type="text"  class="inputt1 noVisible" readonly="readonly" value=" {{session['apellido2']}}" />
+                                             <input id="ape2" name="ape2" type="hidden" value="">
+                                </p>
+
+                            {% endif %}
+                            {% if session['naci']=='sin datos' %}
+                                     <p>
+                                        <label for='cumple' class="t1">Fecha de nacimiento</label>
+                                        <input type="date" name="cumple" id="cumple" min="1920-01-01" class="inputt3 inputt4 noVisible"  />
+
+                            {% else %}
+                                     <p>
+                                        <label  class="t1">Fecha de nacimiento</label>
+                                        <input type="date"  readonly="readonly" class="inputt3 inputt4 noVisible" value="{{session['naci']}}"  />
+                                         <input id="cumple" name="cumple" type="hidden" value="">
+
+                             {% endif %}
+                            {% if session['pais']=='sin datos' %}
+                                        <label for="pais" class="t3 t2">Pais:</label>
+
+                                <select id="pais" name="pais" class="inputt4">
+                                    <option value= ''> -- País -- </option>
+                                    <script>
+                                        for (var pa = 0; pa < Paises.length; pa++) {
+                                            document.write("<option value='" + Paises[pa] + "'>" + Paises[pa] + "</option>");
+                                        }
+                                    </script>
+
+                                </select>
+
+                            </p>
+                              {% else %}
+                                      <label  class="t3 t2">Pais:</label>
+
+                                        <select  class="inputt4">
+                                            <option  >{{session['pais']}} </option>
+
+
+                                        </select>
+                                       <input id="pais"  name="pais" type="hidden" value="">
+                                    </p>
+                               {% endif %}
+                             {% if session['departamento']=='sin datos' %}
+                                <p>
+                                    <label for="dep" class="t1">Ciudad:</label>
+
+                                    <select id="dep" name="dep" class="inputt4">
+                                         <option value= ''> -- Departamento -- </option>
+                                        <script>
+                                            for (var dep = 0; dep < Depar.length; dep++) {
+                                                document.write("<option value='" + Depar[dep] + "'>" + Depar[dep] + "</option>");
+                                            }
+                                        </script>
+                                    </select>
+                              {% else %}
+                                      <label  class="t1">Ciudad:</label>
+
+                                    <select class="inputt4">
+                                         <option value= ''>{{session['departamento']}} </option>
+
+                                    </select>
+                                    <input  id="dep"  name="dep" type="hidden" value="">
+                              {% endif %}
+                                    <label for="dep" class="t3">Localidad:</label>
+
+                                    <select id="loc" name="loc" class="inputt4 noVisible ">
+                                        <option value= ''> -- En construcción-- </option>
+                                    </select>
+
+                                </p>
+
+
+                            <p>
+                                <label for="dir" class="t1"> Direccióon:</label>
+                                <input type="text" name="dir" id="dir" class="inputt1" placeholder=" {% if session['direccion']=='sin datos' %} Dirección {% else %} {{session['direccion']}}{% endif %}" />
+
+                            </p>
+
+                            <p>
+                                <label for="num" class="t1"> Número:</label>
+                                <input type="number" name="num" id="num" min="0" class="inputt2" placeholder="{% if session['direcNumero']=='sin datos' %}Nª: {% else %}  {{session['direcNumero']}} {% endif %} " />
+
+                                <label for="apto" class="t3"> Ap:</label>
+                                <input type="text" name="apto" id="apto" maxlength="10" class="inputt2" placeholder="{% if session['direcAp']=='sin datos' %}Ap: {% else %} {{session['direcAp']}}{% endif %}" />
+
+                                <label for="cp" class="t3"> C.P:</label>
+                                <input type="number" name="cp" id="cp" min="0" class="inputt2" placeholder="{% if session['cp']=='sin datos' %}C.P:{% else %} {{session['cp']}}{% endif %}" />
+                            </p>
+
+                            <p>
+                                <label for='cel1' class="t1"> Celular:</label>
+                                <select id="prefijo" name="prefijo" class="inputt2 noVisible ">
+
+                                    <option value= ''>{% if session['prefijo']=='sin datos' %} Prefijo {% else %}  {{session['prefijo']}}{% endif %}</option>
+                                    <script>
+                                        for (var pref = 0; pref < Prefijo.length; pref++) {
+                                            document.write("<option value='" + Prefijo[pref] + "'>" + Prefijo[pref] + "</option>");
+                                        }
+                                    </script>
+                                </select>
+
+                                <input type="tel" name="cel1" id="cel1" placeholder="{% if session['cel']=='sin datos' %}09...... {% else %} {{session['cel']}}{% endif %}" class="inputt3 inputt4 " />
+
+                                <label for='cel2' class="t3">Otro</label>
+                                <input type="tel" name="cel2" id="cel2" placeholder="{% if session['cel2']==0 %}09...... {% else %} {{session['cel2']}}{% endif %}" class="inputt3 inputt4 noVisible" />
+
+                            </p>
+                            <p>
+                                <label for='email' class="t1">Email de respaldo</label>
+                                <input type="email" name="email" id="email" class="inputt1" placeholder="{% if session['email2']=='sin datos' %}freebooks@freebooks.com.uy{% else %} {{session['email2']}}{% endif %}" />
+
+                            </p>
+
+                            <input type='submit' value='GUARDAR' onClick='return validacion();'>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+<!--.........................................Termina tabla........................................................ -->
+        </div>
+  {%endblock contentido2%}
+

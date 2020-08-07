@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+/* CSS Documento */
+.formContenedor{
+	margin-top: 50px;
+}
+.tabla {
+	position: relative;
+	font-size: 12px;
+	padding-top:120px;
+	margin-left: 15%;
+	width: 100%;
+	max-width: 1000px;
+	bottom: 10px;
+}
+
+.libros {
+	border-collapse: collapse;
+	width: 85%;
+	margin: 20px 0;
+}
+
+.libros td,
+.libros th {
+	border: 1px solid #ddd;
+	padding: 7px 5px;
+}
+
+.libros tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+.libros tr:hover {
+	background-color: rgba(138, 74, 135, .2);
+}
+
+.libros th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: rgb(138, 74, 135);
+	color: white;
+}
+
+.libros a {
+	color: white;
+}
+
+.tabla input[type=submit] {
+	background: var(--colorPagina);
+	color: var(--colorBlanco);
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.tabla input[type=submit]:hover {
+	background: var(--colorBotonHover);
+}
+
+@media(min-width:1024px) {
+	.tabla {
+		margin-left: 16%;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.tabla input[type=submit] {
+		width: 85%;
+		margin: 0;
+		float: none;
+	}
+}
+
+

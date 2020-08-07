@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+/* CSS Documento */
+
+#caja-slaider {
+	margin: auto;
+	width: 85%;
+	min-height: 500px;
+	max-width: 900px;
+	overflow: hidden;
+	/*el contenico que se sale no se muestre*/
+	position: relative;
+	margin-bottom: 10px;
+}
+
+#slaider {
+	display: flex;
+}
+
+#slaider section h2 {
+	text-align: center;
+	font-size: 16px;
+	padding: 30px 0;
+}
+
+#slaider img {
+	display: block;
+	margin: auto;
+	width: 50vw;
+	height: 30vh;
+	object-fit: scale-down;
+}
+
+#slaider section p {
+	position: relative;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 90%;
+	font-size: 14px;
+	margin: auto;
+	text-align: justify;
+}
+
+#btn-prev,
+#btn-next {
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+	font-family: monospace;
+	background: var(--colorPagina);
+	color: var(--colorBlanco);
+	width: 50px;
+	height: 50px;
+	top: 30%;
+	line-height: 50px;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+#btn-prev:hover,
+#btn-next:hover {
+	background: var(--colorBotonHover);
+}
+
+#btn-prev {
+	left: 0;
+}
+
+#btn-next {
+	right: 0;
+}
+
+.contGusta {
+	position: relative;
+	width: 100%;
+	height: 80px;
+	margin: 20px;
+}
+
+.btn-gusta,
+.btn-noGusta {
+	display: inline-block;
+	position: absolute;
+	height: 80px;
+	width: 80px;
+}
+
+.btn-gusta {
+	background: url(../_img/iconos/gusta.webp) no-repeat center;
+	right: 20%;
+}
+
+.btn-noGusta {
+	background: url(../_img/iconos/nogusta.webp) no-repeat center;
+	left: 15%;
+}
+
+.btn-gusta:hover {
+	background: url(../_img/iconos/gusta2.webp) no-repeat center;
+}
+
+.btn-noGusta:hover {
+	background: url(../_img/iconos/nogusta2.webp) no-repeat center;
+}
+
+.ajuste {
+	position: relative;
+	padding: 10px;
+	width: 100%;
+	height: 20px;
+}
+
+#slaider img:hover {
+	cursor: pointer;
+	filter: grayscale(100%);
+	transform: scale(1, 1);
+}
+
+@media(min-width:1024px) {
+	#caja-slaider {
+		height: 850px;
+	}
+	#slaider img {
+		width: 30vw;
+		height: 60vh;
+		object-fit: scale-down;
+	}
+	#slaider section h2 {
+		font-size: 26px;
+	}
+	#btn-prev {
+		left: 10%;
+	}
+	#btn-next {
+		right: 10%;
+	}
+	.btn-gusta {
+		right: 30%;
+	}
+	.btn-noGusta {
+		left: 25%;
+	}
+}

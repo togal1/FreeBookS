@@ -1,0 +1,162 @@
+﻿<!doctype html>
+<html lang='es'>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="App de intercambios de libros">
+    <meta name="keywords" content="libros, intercambio, compendio, ejemplar, manual, obra, texto, tomo, vademécum, volumen, álbum, cuaderno, portafolio, trueque">
+    <!--<meta http-equiv="refresh" content="30">-->
+    <link rel="icon" href="../static/_img/favicon.ico">
+    <meta name="author" content="Erdam Techera ,Lorena Gallas, Rodrigo Gabin, Erica Poses, Valentina Peña">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <title>FreeBookS  {{Titulo}}</title>
+    <link rel="stylesheet" href="../static/_css/estilo.css">
+    <script src="../static/_js/bd.js"></script>
+    <script src="../static/_js/prefixfree.min.js"></script>
+    <script src="../static/_js/lugares.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="contenedor">
+            <h1 class="icon-logo" title="FreeBookS" >
+            <a href="#">FreeBookS</a>
+            </h1>
+
+            <!--.........................................Empieza el buscador........................................................ -->
+
+            <label class="icon-menu" for="menu-bar"></label>
+            <input type='checkbox' id="menu-bar">
+            <form class="buscador">
+                <input type="search" name="nombre" placeholder="Buscar">
+            </form>
+            <!--.........................................fin del buscador........................................................ -->
+            <!--.........................................Empieza el menu........................................................ -->
+            <nav class="menu">
+                <div class="menu-izq">
+                    <!--<a href="#" title="Categoría">Categoría</a>-->
+                    <a href="#" title="Historial">Historial</a>
+                    <a href="#" title="Ayuda">Ayuda</a>
+                </div>
+                <div class="menu-derecha">
+                    <a href="{{url_for('login')}}" title="Usuario" class="icon-usuario"></a>
+                    <a href="#" title="Agrgar Libro" class="icon-libro " onClick="MasLibros(1)"></a>
+                    <a href="#" title="Notificacón" class="icon-notificacion"></a>
+
+                </div>
+            </nav>
+        </div>
+        <!--.........................................Empieza del menu........................................................ -->
+
+
+    </header>
+    <!--.........................................Empieza modal para ingresar........................................................ -->
+    <input type="checkbox" id="cerrar">
+         <label for="cerrar" id="btn_cerrar">X</label>
+     
+ <div class="modal">
+        <div class="contenido">
+        <form action="{{url_for('login')}}" method="post" name="login">
+                                            <h2>INGRESAR</h2>
+                                         <input id="email" name="email" required placeholder="&#x1f4e7; email" size="80" type="text" value="" />
+                                           <input type="password" id="passwd" placeholder="&#128272; Contraseña" size="80" name="password" required value="">
+                                             <input type="submit" value="Ingresar">
+                                           <a href="{{url_for('registro')}}" class="izquierda">¿Desea registrarse?</a>
+                                          <a href="" class="derecha">Olvidé mi contraseña</a>
+            <label for="remember_me">
+                    <input id="remember_me" name="remember_me" type="checkbox" value="y" /> Recuérdame
+                </label>
+
+        </form>
+       </div>
+  </div>
+
+   <!--.........................................Empieza banner........................................................ -->
+    <aside id="publicidad">
+        <img src="../static/_img/banner/libro.jpg" alt="libro">
+        <div class="contenedor">
+            <h2>Gran feria del libro</h2>
+            <p>¡Vení a disfrutar de un día inolvidable!</p>
+            <a href="#" title="leer más">Leer más</a>
+        </div>
+    </aside>
+
+    <!--.........................................fin banner........................................................ -->
+
+
+    <div id="caja-slaider">
+        <div id="slaider">
+
+            <script>
+                let res;
+                for (i = 0; i < 8; i++) {
+                    document.write("<section> <h2>" + Books[i].titulo + "</h2>");
+                    document.write('<img  src=' + Books[i].url + ' alt="" onClick="myFunction(' + i + ')">');
+                    document.write(' <div class="contGusta"><div href="#" title="me gusta" class="btn-gusta"></div><div href="#" title="no me gusta" class="btn-noGusta"></div></div>');
+
+                    if (Books[i].texto.length > 250) {
+                        res = Books[i].texto.slice(0, 250) + '  .....';
+
+                    } else {
+                        alert('Es menor');
+                        res = Books[i].texto;
+
+                    }
+                    document.write("<p>" + res + "</p>  </section>");
+                }
+            </script>
+
+
+        </div>
+
+        <div id="btn-prev" onClick="botonPrev()">&#60;</div>
+        <div id="btn-next" onClick="botonNext()">&#62;</div>
+    </div>
+
+    <!--.........................................fin del modal carrusel........................................................ -->
+
+    <section id='destacados'>
+        <h3> Los libros más buscados </h3>
+        <div class="contenedor">
+            <div class="destaca_info">
+                <img src="../static/_img/destacados/1.jpg" alt="">
+                <h4>Cambiemos el mundo</h4>
+            </div>
+            <div class="destaca_info">
+                <img src="../static/_img/destacados/2.jpg" alt="">
+                <h4>Como alcanzar el éxito ...</h4>
+            </div>
+            <div class="destaca_info">
+                <img src="../static/_img/destacados/3.jpg" alt="">
+                <h4>Puerto Rico</h4>
+            </div>
+            <div class="destaca_info">
+                <img src="../static/_img/destacados/4.jpg" alt="">
+                <h4>Programación Niños</h4>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="contenedor">
+            <div id="links">
+                <a href="#" title="Trabaja con nosotros">Trabaja con nosotros</a> |
+                <a href="#" title="Términos y condiciones">Términos y condiciones</a> |
+                <a href="#" title="Politica de privacidad">Política de privacidad</a> |
+                <a href="#" title="Ayuda">Ayuda</a>
+                <p class="copy">Copyright &copy;2020-2020 freebook.com </p>
+
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="../static/_js/slaider.js"></script>
+    <script src="../static/_js/ValidadorForm.js"></script>
+    <script src="../static/_js/menu.js"></script>
+    <script src="../static/_js/calificacion.js"></script>
+    <script src="../static/_js/redirige.js"></script>
+
+</body>
+
+</html>

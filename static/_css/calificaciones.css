@@ -1,0 +1,180 @@
+@charset "utf-8";
+
+/* CSS Documento */
+
+.contenedor_calif {
+	display: flex;
+	width: 100%;
+	padding-right: 5%;
+	flex-wrap: wrap;
+}
+
+.puntos {
+	width: 70%;
+	padding: 0 5% 0 12%;
+	max-height: 290px;
+}
+
+.calificar {
+	width: 30%;
+	min-width: 150px;
+	height: 300px;
+}
+
+#imagenes {
+	height: 100%;
+	margin: 12% 0 0 25%;
+}
+
+.calificados1 {
+	background: url("../_img/iconos/calificacion1.png");
+}
+
+.calificados2 {
+	background: url("../_img/iconos/calificacion2.png");
+}
+
+.calificados3 {
+	background: url("../_img/iconos/calificacion3.png");
+}
+
+.calificados4 {
+	background: url("../_img/iconos/calificacion4.png");
+}
+
+.calificados5 {
+	background: url("../_img/iconos/calificacion5.png");
+}
+
+.calificar [class^="calificados"],
+.calificar [class*="calificados"] {
+	background-size: 141px 180px;
+	background-repeat: no-repeat;
+}
+
+#imagenes>p {
+	position: relative;
+	font-size: 30px;
+	left: 160px;
+	top: 80px;
+	flex-wrap: wrap;
+}
+
+.puntos [class^="calificados"],
+.puntos [class*="calificados"] {
+	background-size: 25px 34px;
+	background-repeat: no-repeat;
+}
+
+.puntos p {
+	height: 40px;
+	margin: 10px 0 -5px 40%;
+	padding: 20px 0 0 60px;
+	box-shadow: 3px 1px 2px 0px rgba(0, 0, 0, 0.29);
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: "";
+}
+
+.comentarios {
+	width: 100%;
+	padding: 16px 0 0 0;
+	margin: 10px 75px 0 0;
+}
+
+.buho {
+	border: 2px solid #dedede;
+	background-color: #f1f1f1;
+	border-radius: 5px;
+	padding: 6px;
+	margin: 6px 0;
+}
+
+.comentarios h2 {
+	font-size: 2em;
+	margin-bottom: 50px;
+}
+
+.contComentarios h4 {
+	font-size: 1.5em;
+	margin: 0 0 15px 30px;
+}
+
+.comentarios h2 span {
+	position: relative;
+	top: 10px;
+	font-size: .8em;
+	margin-left: 15%;
+	cursor: pointer;
+}
+
+.oscuro {
+	margin: 0;
+	padding: 0;
+	border-color: #ccc;
+	background-color: #ddd;
+}
+
+.contComentarios img {
+	position: relative;
+	display: inline;
+	margin: -6px;
+	;
+	padding: 0;
+	max-width: 30px;
+}
+
+.comentarios p {
+	position: relative;
+	display: inline-block;
+	height: 30px;
+	top: -8px;
+	margin-left: 20px;
+	margin-top: -20px;
+}
+
+.estatus {
+	display: block;
+	color: #999;
+}
+
+#cajacomentario {
+	overflow: hidden;
+	height: 270px;
+}
+
+@media screen and (max-width: 1024px) {
+	.calificar [class^="calificados"],
+	.calificar [class*="calificados"] {
+		background-size: 95px 133px;
+	}
+	#imagenes>p {
+		font-size: 24px;
+		left: 100px;
+	}
+	.comentarios p {
+		top: 0;
+		margin: 0;
+	}
+	.buho img {
+		display: none;
+	}
+	.calificar {
+		
+		height: 200px;
+	}
+	.comentarios h2 {
+		font-size: 1.5em;
+	}
+	#cajacomentario {
+		height: 290px;
+	}
+	.puntos {
+		width: 90%;
+		margin-top: -30px;
+		;
+	}
+	.puntos p {
+		margin: 10px 0 -5px -20%;
+	}
+}

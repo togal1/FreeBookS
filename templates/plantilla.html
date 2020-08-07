@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang='es'>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="App de intercambios de libros">
+    <meta name="keywords" content="libros, intercambio, compendio, ejemplar, manual, obra, texto, tomo, vademécum, volumen, álbum, cuaderno, portafolio, trueque">
+    <!--<meta http-equiv="refresh" content="30">-->
+    <link rel="icon" href="../static/_img/favicon.ico">
+    <meta name="author" content="Erdam Techera ,Lorena Gallas, Rodrigo Gabin, Erica Poses, Valentina Peña">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <title>FreeBookS{{Titulo}}</title>
+    <link rel="stylesheet" href="../static/_css/estilo.css">
+    <script src="../static/_js/bd.js"></script>
+    <script src="../static/_js/prefixfree.min.js"></script>
+    <script src="../static/_js/lugares.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="contenedor">
+            <h1 class="icon-logo" title="FreeBookS" onClick="redirigeIndex()">
+            <a href="{{url_for('index')}}">FreeBookS</a>
+            </h1>
+
+            <!--.........................................Empieza el buscador........................................................ -->
+
+            <label class="icon-menu" for="menu-bar"></label>
+            <input type='checkbox' id="menu-bar">
+            <form class="buscador">
+                <input type="search" name="nombre" placeholder="Buscar">
+            </form>
+            <!--.........................................fin del buscador........................................................ -->
+            <!--.........................................Empieza el menu........................................................ -->
+            <nav class="menu">
+                <div class="menu-izq">
+                    <!--<a href="#" title="Categoría">Categoría</a>-->
+                    <a href="{{url_for('construccion')}}" title="Historial">Historial</a>
+                    <a href="{{url_for('construccion')}}" title="Ayuda">Ayuda</a>
+                </div>
+                <div class="menu-derecha">
+                    <a href="{{url_for('perfil')}}" title="{{session['username']}}" class="icon-usuario"></a>
+                    <a href="#" title="Agrgar Libro" class="icon-libro " onClick="MasLibros(1)"></a>
+                    <a href="#" title="Notificacón" class="icon-notificacion"></a>
+
+                </div>
+            </nav>
+        </div>
+        <!--.........................................Empieza del menu........................................................ -->
+        <!--.........................................Empieza modal Agregar, editar libro........................................................ -->
+        <div id="subirLibros">
+            <a href="#" onClick="MasLibros(0)">X</a>
+
+            <div class="caja-Libros">
+
+                <form action="/agregarBooks" method="post" enctype="multipart/form-data">
+                    <p>
+                        <label for='titulo' class="t0">Título</label>
+                        <input type="text" name='titulo' id="titulo" placeholder="Título" class="inputt1 marg" autofocus autocomplete='on' required />
+
+                        <label for='autor' class="t0">Autor</label>
+                        <input type="text" name="autor" id="autor" placeholder="Autor" class="inputt1 marg" autocomplete='on' required />
+
+                        <label for="genero" class="t0">Género:</label>
+
+                        <select id="genero" name="genero"   class="inputt3 inputt4">
+                            <option value="no ingreso datos"> -- Género -- </option>
+                            <script>
+							         Genero.sort();
+                                for (var gen = 0; gen < Genero.length; gen++) {
+                                    document.write("<option value='" + Genero[gen] + "'>" + Genero[gen] + "</option>");
+                                }
+
+                            </script>
+                               <option value ="Otros">Otros</option>
+                        </select>
+
+                        <label for="estado" class="t3 ">Estado:</label>
+
+                        <select id="estado" name="estado" class="inputt3 inputt4">
+                            <option value="no ingreso datos"> -- Estado -- </option>
+                            <script>
+                                for (var est = 0; est < Estado.length; est++) {
+                                    document.write("<option value='" + Estado[est] + "'>" + Estado[est] + "</option>");
+                                }
+                            </script>
+
+                        </select>
+
+                        <label for="idioma" class="t3 ">Idioma:</label>
+
+                        <select id="idioma" name="idioma" class="inputt3 inputt4">
+                            <option value="no ingreso datos">-- Idioma -- </option>
+                            <script>
+							Idiomas.sort();
+                                for (var leng = 0; leng < Idiomas.length; leng++) {
+                                    document.write("<option value='" + Idiomas[leng] + "'>" + Idiomas[leng] + "</option>");
+                                }
+                            </script>
+
+                        </select>
+                    </p>
+                    <div class="cajaVisor">
+                        <div id="visor1">
+                            <label>
+                                <embed id="cargar1" src="../static/_img/iconos/foto.png">
+                            </label>
+                            <input  type="file" name="img[1]" id="img1" accept="image/png, image/jpeg, image/gif" onChange="previsulizar(1)">
+                        </div>
+
+                        <div id="visor2">
+                            <label>
+                                <embed id="cargar2" src="../static/_img/iconos/foto.png">
+                            </label>
+                            <input type="file" name="img[2]" id="img2" accept="image/png, image/jpeg, image/gif" onChange="previsulizar(2)">
+                        </div>
+
+                        <div id="visor3">
+                            <label>
+                                <embed  id="cargar3" src="../static/_img/iconos/foto.png">
+                            </label>
+                            <input type="file" name="img[3]" id="img3" accept="image/png, image/jpeg, image/gif" onChange="previsulizar(3)">
+                        </div>
+                    </div>
+                    <p>
+                        <label for="descripcion" class="noVisible cajaDes ">Descripción</label>
+                    </p>
+                    <p>
+                        <textarea name="descripcion" id="descripcion">
+                        </textarea>
+                    </p>
+                    <p>
+
+                        <input type='submit' value='Agregar'>
+                    </p>
+
+                </form>
+            </div>
+        </div>
+ <!--.........................................fin de modal Agregar, editar libro........................................................ -->
+    </header>
+  
+  <!--.........................................termina banner........................................................ -->    
+      {%block contentido%}{%endblock%}
+    
+    <!--.........................................Empieza footer........................................................ -->
+            
+    <footer>
+        <div class="contenedor">
+            <div id="links">
+                <a href="#" title="Trabaja con nosotros">Trabaja con nosotros</a> |
+                <a href="#" title="Términos y condiciones">Términos y condiciones</a> |
+                <a href="#" title="Politica de privacidad">Politica de privacidad</a> |
+                <a href="#" title="Ayuda">Ayuda</a>
+                <p class="copy">Copyright &copy;2020-2020 freebook.com </p>
+
+            </div>
+        </div>
+
+    </footer>
+             
+ <!--.........................................termina footer........................................................ -->
+    <script src="../static/_js/slaider.js"></script>
+    <script src="../static/_js/menu.js"></script>
+    <script src="../static/_js/ValidadorForm.js"></script>
+    <script src="../static/_js/calificacion.js"></script>
+    <script src="../static/_js/redirige.js"></script>
+
+
+
+</body>
+
+</html>
+
+

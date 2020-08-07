@@ -1,0 +1,56 @@
+{% extends "plantilla2.html" %}
+   {%block contentido2%}
+
+                    <div id="caja-contenedora"  >
+                    <div class="menu-bar" onClick="menuBar()"> &#x2611; </div>
+
+<!-- ................................................Empieza tabla................................................. -->
+
+                                    <div class="tabla">
+                                                    <h2>Mis Libros</h2>
+                                  <div class="formContenedor">
+                                    <form name="formulario" id="form1" method="" >
+                                                <table class="libros">
+
+                                                  <tr>
+                                                    <th> <input type="checkbox" id="master" onChange="marcar(this, 'marcado')"/> </th>
+                                                    <th> <a href="#" title="Título">Título &#x1f53d;</a></th>
+                                                    <th class="noVisible"><a href="#" title="Autor">Autor &#x1f53d;</a></th>
+                                                    <th class="noVisible"><a href="#" title="Género">Género &#x1f53d;</a></th>
+                                                    <th class="noVisible" ><a href="#" title="Idioma">Idioma &#x1f53d;</a></th>
+                                                    <th class="noVisible"><a href="#" title="Estado">Estado &#x1f53d;</a></th>
+                                                    <th class="noVisible">Descripción </th>
+                                                    <th>Borrar/Editar</th>
+                                                  </tr>
+                                        {%for libro in libros %}
+                                                  <tr>
+                                                    <td ><input type="checkbox" id="cb1-{{libro.0}}" class="marcado" /></td>
+                                                    <td >{{libro.4 | truncate (14)}}</td>
+                                                    <td class="noVisible">{{libro.5 | truncate (14) }}</td>
+                                                    <td class="noVisible">{{libro.6 | truncate (14) }}</td>
+                                                    <td class="noVisible">{{libro.7 | truncate (14) }}</td>
+                                                    <td class="noVisible">{{libro.8 | truncate (14) }}</td>
+                                                    <td class="noVisible">{{libro.9 | truncate (45) }}</td>
+                                                    <td class="centrar"><a  title="borrar" class="icon-basura" onClick=" borrarUno('cb1-{{libro.0}}');" ></a>
+                                                       <a  title="Edit" class="icon-lapiz" onClick="MasLibros(1)"></a>
+                                                     </td>
+                                                  </tr>
+                                        {% endfor %}
+                                                </table>
+                                                <input type='submit' value='Borrrar' onClick="borrar()">
+                                              </form>
+                                  </div>
+                                     </div>
+
+<!--.........................................Termina tabla........................................................ -->
+
+                    </div>
+                       <script>
+                           function borrar(){
+	                             alert('borrar');
+                                 }
+                       </script>
+
+     {%endblock contentido2%}
+
+

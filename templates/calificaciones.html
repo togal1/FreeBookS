@@ -1,0 +1,87 @@
+{% extends "plantilla2.html" %}
+   {%block contentido2%}
+
+ <!--.........................................termina banner........................................................ -->
+ <div id="caja-contenedora">
+            <div class="menu-bar" onClick="menuBar()"> &#x2611; </div>
+
+            <!-- ................................................Empieza tabla................................................. -->
+
+            <div class="tabla">
+                <h2>Calificaciones</h2>
+                <div class="contenedor_calif">
+                    <div class="calificar">
+                        <div id="imagenes" class="calificados1">
+                            <p id="numero">2.3</p>
+                        </div>
+                    </div>
+
+                    <div class="puntos ">
+                        <p class="calificados5">Excelente 5,0 Búhos</p>
+                        <p class="calificados4">Muy bueno 4,0 a 4,9 Búhos </p>
+                        <p class="calificados3">Bueno 3,0 a 3,9 Búhos </p>
+                        <p class="calificados2">Regular 2,0 a 2,9 Búhos</p>
+                        <p class="calificados1">Muy bueno 0 a 1,9 Búhos </p>
+                    </div>
+
+                    <div class="comentarios">
+                        <h2 class="centrar">Comentarios <span id="btn-abajo" onClick="correr(0)"> &#x1f53a;</span> <span id="btn-arriba" onClick="correr(1)"> &#x1f53b;</span>  </h2>
+                        <div class="contComentarios" id="cajacomentario">
+                            <h4 id="contador">Total: 0</h4>
+                            <div class='buho'>
+                                <img src="../static/_img/iconos/icon-perfil.webp" alt="búhos" >
+                                <img src="../static/_img/iconos/icon-perfil.webp" alt="búhos">
+                                <img src="../static/_img/iconos/icon-perfil.webp" alt="búhos">
+                                <img src="../static/_img/iconos/icon-perfil.webp" alt="búhos">
+                                <img src="../static/_img/iconos/icon-perfil.webp" alt="búhos">
+                                <p>Muy buen trato, el libro que intercambiamos estaba impecable</p>
+                                <span class="estatus">Excelente</span>
+                            </div>
+                             <div class='buho'>
+                                <img src="../static/_img/iconos/icon-perfil.webp" alt="búhos">
+                                <img src="../static/_img/iconos/icon-perfil.webp" alt="búhos">
+                                <img src="../static/_img/iconos/icon-perfil.webp" alt="búhos">
+                                <p>Muy bien, aunque no tenía el libro que precisaba me recomendó otro. </p>
+                                <span class="estatus">Bueno</span>
+                            </div>
+                             <div class='buho'>
+                                <img src="../static/_img/iconos/icon-perfil.webp" alt="búhos">
+                                <img src="../static/_img/iconos/icon-perfil.webp" alt="búhos">
+                                <img src="../static/_img/iconos/icon-perfil.webp" alt="búhos">
+                                <img src="../static/_img/iconos/icon-perfil.webp" alt="búhos">
+                                <p>Muy buen trato..</p>
+                                <span class="estatus">Muy Bueno</span>
+                            </div>
+                             <div class='buho'>
+                                <img src="../static/_img/iconos/icon-perfil.webp" alt="búhos">
+                                <img src="../static/_img/iconos/icon-perfil.webp" alt="búhos">
+                                <img src="../static/_img/iconos/icon-perfil.webp" alt="búhos">
+                                <img src="../static/_img/iconos/icon-perfil.webp" alt="búhos">
+                                <p>Muy buen trato..</p>
+                                <span class="estatus">Muy Bueno</span>
+                            </div>
+                             <div class='buho'>
+                                <img src="../static/_img/iconos/icon-perfil.webp" alt="búhos">
+                                <img src="../static/_img/iconos/icon-perfil.webp" alt="búhos">
+                                <img src="../static/_img/iconos/icon-perfil.webp" alt="búhos">
+                                <img src="../static/_img/iconos/icon-perfil.webp" alt="búhos">
+                                <p>Muy buen trato..</p>
+                                <span class="estatus">Muy Bueno</span>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!--.........................................Termina tabla........................................................ -->
+
+        </div>
+
+    </main>
+
+<!--.........................................Empieza footer........................................................ -->
+     {%endblock contentido2%}

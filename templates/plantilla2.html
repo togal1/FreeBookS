@@ -1,0 +1,55 @@
+{% extends "plantilla.html" %}
+   {%block contentido%}
+
+            <main>
+  <!--.........................................Empieza menu izquierdo ........................................................ --> 
+                    
+                    <div class="menuIzq">
+            <div class="cuenta">
+                <h2> Mi Cuenta</h2>
+                <div class="user">
+                    <img src="{{ session['foto']}}" alt="foto">
+                </div>
+                <p>{{session['username']}}</p>
+            </div>
+
+            <nav>
+                <ul class="nav-ul">
+                    <li><a href="{{url_for('perfil')}}" title="Mi Perfil" class="icon-perfil"> &nbsp; Mi Perfil</a></li>
+                    <li><a href="#" title="Biblioteca" class="icon-biblioteca"> &nbsp;  Biblioteca <span onClick="menu(1)"> &#x1f53a; </span></a>
+                        <ul id="menu1">
+                            <li> <a href="{{url_for('listar_libros')}}" title="Mis Libros">Mis Libros</a></li>
+                            <li> <a href="{{url_for('construccion')}}" title="Coincidencias">Coincidencias</a></li>
+                            <li><a href="{{url_for('listar_likes')}}" title="Mis Likes">Mis Likes</a></li>
+
+                        </ul>
+                    </li>
+                    <li> <a href="{{url_for('chat')}}" title="Chat" class="icon-chat"> &nbsp; Chat</a></li>
+                    <li> <a href="{{url_for('calificaciones')}}" title="Calificaciones" class="icon-calificaciones">&nbsp;  Calificaciones</a></li>
+                    <li><a href="#" title="Configuración" class="icon-conf">&nbsp;  Configuración<span onClick="menu(2)"> &#x1f53a; </span></a>
+
+                        <ul id="menu2">
+                            <li> <a href="{{url_for('construccion')}}" title="En construcción">En construcción</a></li>
+                            <li> <a href="{{url_for('construccion')}}" title="En construcción">En construcción</a></li>
+                            <li> <a href="{{url_for('construccion')}}" title="En construcción">En construcción</a></li>
+
+                        </ul>
+
+                    </li>
+                    <li><a href="{{url_for('logout')}}" title="salir" class="icon-salir"> Salir</a></li>
+                </ul>
+
+            </nav>
+
+        </div>
+                   
+                  
+      {%block contentido2%}{%endblock%}
+    
+            </main>
+                
+
+            
+  {%endblock contentido%}
+
+

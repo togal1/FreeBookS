@@ -1,0 +1,134 @@
+@charset "utf-8";
+.modal {
+	width: 100%;
+	height: 120%;
+	background: rgba(0, 0, 0, .8);
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	z-index: 500;
+	animation: modal 0s 1s forwards;
+	visibility: hidden;
+	opacity: 0;
+}
+
+#cerrar {
+	display: none;
+}
+
+#cerrar:checked+label,
+#cerrar:checked~.modal {
+	display: none;
+}
+
+.contenido, .contenidoRegistro {
+	border: 10px double rgba(0, 0, 0, .4);
+	margin: auto;
+	background: rgba(256, 256, 256, .8);
+	border-radius: 30px;
+	text-align: center;
+	box-shadow: inset -4px 4px 10px rgba(13, 53, 23, .9);
+}
+.contenido{
+    width: 50%;
+	height: 40%;
+	max-width: 650px;
+	min-height: 350px;
+	max-height: 400px;
+}
+.contenidoRegistro {
+	width: 50%;
+	max-width: 700px;
+	min-height: 450px;
+	max-height: 700px;
+}
+
+#cerrar+label {
+	position: fixed;
+	color: var(--colorBlanco);
+	font-size: 27px;
+	z-index: 520;
+	background: rgba(138, 74, 135, .5);
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 50%;
+	border: var(--colorBlanco) 1px double;
+	padding: 0 0 0 9px;
+	top:13%;
+	right: 15%;
+	cursor: pointer;
+	animation: modal 0s 1s forwards;
+	visibility: hidden;
+	opacity: 0;
+}
+
+#cerrar+label:hover {
+	background: rgba(138, 74, 135, .9);
+	border: #666 1px double;
+	color: #CCC;
+}
+
+@keyframes modal {
+	100% {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+.contenido form,
+.contenidoRegistro form {
+	margin: 15px auto;
+	width: 90%;
+	height: 90%;
+	max-width: 600px;
+	background: rgba(155, 178, 158, .2);
+	padding: 5px;
+	border-radius: 15px;
+}
+.contenidoRegistro form a,
+.contenido form a {
+	text-decoration: none;
+	margin: 15px;
+	color: #155425;
+}
+
+.izquierda {
+	float: left;
+}
+
+.derecha {
+	float: right;
+}
+
+form h2 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.contenidoRegistro input,
+.contenido input {
+	display: block;
+	padding: 10px;
+	width: 100%;
+	margin: 20px 0;
+}
+.contenidoRegistro input[type='submit'],
+.contenido input[type='submit'] {
+	box-shadow: 4px 4px 10px rgba(13, 53, 23, .9);
+	border: 0;
+}
+
+@media(max-width:768px) {
+	.contenido, .contenidoRegistro {
+		width: 95%;
+	}
+
+.contenido form a, .contenidoRegistro form a {
+	font-size: 12px;
+	margin: 2px;
+}
+#cerrar+label {
+    right:0;
+}
+}
+

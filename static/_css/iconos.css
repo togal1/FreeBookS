@@ -1,0 +1,211 @@
+@charset "utf-8";
+
+/* CSS Documento */
+
+
+/* -------------------------------------------------------------------------------------- */
+
+.icon-menu {
+	background: url('../_img/iconos/icon-menu.webp') no-repeat 10px center;
+}
+
+.icon-logo {
+	background: url('../_img/iconos/icon-logo2.webp') no-repeat 0px center;
+	width: 4em;
+	height: 3em;
+	margin: 0 3em 0 .3em;
+	line-height: .9em;
+	cursor:pointer;
+}
+
+.icon-logo a {
+	position: relative;
+	left: 75px;
+}
+
+.icon-basura {
+	background: url('../_img/iconos/icon-basura.webp') no-repeat 0px center;
+	filter: opacity(30%)
+}
+
+.icon-lapiz {
+	background: url('../_img/iconos/icon-lapiz.webp') no-repeat 0px center;
+	filter: opacity(30%)
+}
+
+
+/*-------------------Menu User------------------------------------------------------------*/
+
+.icon-perfil {
+	background: url('../_img/iconos/icon-perfil.webp') no-repeat -5px center;
+}
+
+.icon-biblioteca {
+	background: url('../_img/iconos/icon-biblioteca.webp') no-repeat -5px center;
+}
+
+.icon-chat {
+	background: url('../_img/iconos/icon-chat.webp') no-repeat -5px center;
+}
+.icon-salir {
+	background: url('../_img/iconos/icon-salir.webp') no-repeat -5px center;
+}
+
+.icon-calificaciones {
+	background: url('../_img/iconos/icon-calificaciones.webp') no-repeat -5px center;
+}
+
+.icon-conf {
+	background: url('../_img/iconos/icon-conf.webp') no-repeat -5px center;
+}
+
+.icon-perfil:hover {
+	background: url('../_img/iconos/icon-perfil1.webp') no-repeat -5px center;
+}
+
+.icon-biblioteca:hover {
+	background: url('../_img/iconos/icon-biblioteca1.webp') no-repeat -5px center;
+}
+
+.icon-chat:hover {
+	background: url('../_img/iconos/icon-chat1.webp') no-repeat -5px center;
+}
+.icon-salir:hover {
+	background: url('../_img/iconos/icon-salir1.webp') no-repeat -5px center;
+}
+
+.icon-calificaciones:hover {
+	background: url('../_img/iconos/icon-calificaciones1.webp') no-repeat -5px center;
+}
+
+.icon-conf:hover {
+	background: url('../_img/iconos/icon-conf1.webp') no-repeat -5px center;
+}
+
+.icon-basura:hover,
+.icon-lapiz:hover {
+	filter: opacity(100%);
+}
+
+
+/* -------------------------------------------------------------------------------------- */
+
+.menu .icon-notificacion:before {
+	content: 'Notificación';
+}
+
+.menu .icon-libro:before {
+	display: inline;
+	content: 'Agregar Libro';
+}
+
+.menu .icon-usuario:before {
+	content: 'Usuario';
+}
+
+
+/* -------------------------------------------------------------------------------------- */
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+	display: inline-block;
+	width: 1.5em;
+	height: 1.3em;
+	margin: 0 .2em 0 .2em;
+	text-align: center;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1em;
+	/*-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;*/
+}
+
+
+/*[ atributo * = valor ] selector coincide con cada elemento cuyo atributo valor que contiene un determinado valor*/
+
+
+/*El [ atributo ^ = valor del selector] se corresponde con cualquier elemento cuyo atributo de valor comienza con un determinado valor */
+
+.icon-menu:before {
+	content: ' ';
+}
+
+.icon-logo:before {
+	content: '  ';
+}
+
+.icon-perfil:before {
+	content: '  ';
+}
+
+.icon-biblioteca:before {
+	content: '  ';
+}
+
+.icon-chat:before {
+	content: '  ';
+}
+.icon-salir:before {
+	content: '  ';
+}
+
+.icon-calificaciones:before {
+	content: '  ';
+}
+
+.icon-conf:before {
+	content: '  ';
+}
+
+.icon-basura:before {
+	content: '  ';
+}
+
+.icon-lapiz:before {
+	content: '  ';
+}
+
+@media(min-width:1024px) {
+	.menu .icon-usuario {
+		background: url('../_img/iconos/icon-usuario.webp') no-repeat 10px center;
+	}
+	.menu .icon-libro {
+		background: url('../_img/iconos/icon-agregar.webp') no-repeat 0px center;
+	}
+	.menu .icon-notificacion {
+		background: url('../_img/iconos/icon-notificacion.webp') no-repeat 10px center;
+	}
+	.menu .icon-usuario:hover {
+		background: url('../_img/iconos/icon-usuario2.webp') no-repeat 10px center;
+	}
+	.menu .icon-libro:hover {
+		background: url('../_img/iconos/icon-agregar2.webp') no-repeat 0px center;
+	}
+	.menu .icon-notificacion:hover {
+		background: url('../_img/iconos/icon-notificacion2.webp') no-repeat 10px center;
+	}
+	.menu .icon-usuario:before {
+		content: ' ';
+	}
+	.menu .icon-libro:before {
+		content: ' ';
+	}
+	.menu .icon-notificacion:before {
+		content: ' ';
+	}
+	.menu .icon-libro:before {
+		content: ' ';
+	}
+}
+
+@media(max-width:1024px) {
+	h1 a {
+		display: none;
+	}
+	.icon-logo {
+		background: url('../_img/iconos/icon-logo.webp') no-repeat 10px center;
+		width: 1.5em;
+		height: 1.5em;
+		margin: .5em .2em 0 .2em;
+	}
+}

@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+/* CSS Documento */
+
+.menuIzq {
+	position: relative;
+	left: 0;
+	margin-top: 80px;
+	background: var(--menuUser);
+	box-shadow: 2px 0px 9px -6px rgba(0, 0, 0, 0.75);
+	padding: 2%;
+	padding-bottom: 200px;
+	height: 100%;
+	min-height:900px;
+}
+
+.menuIzq h2,
+.menuIzq a {
+	color: var(--colorTexto);
+}
+
+.menuIzq h2 {
+	margin: 20px auto;
+}
+
+.cuenta {
+	width: 200px;
+	margin: auto;
+	text-align: center;
+}
+
+.cuenta p {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #24294F;
+	margin-top: 10px;
+}
+
+.menuIzq .nav-ul ul {
+	margin-left: 50px;
+}
+
+.menuIzq li {
+	margin-top: 50px;
+}
+
+.nav-ul a:hover {
+	color: #472546;
+}
+
+.nav-ul span {
+	position: absolute;
+	right: 20px;
+	;
+	margin-top: 10px;
+	transform: rotate(60deg);
+}
+
+.nav-ul span:hover {
+	color: var(--colorPagina);
+}
+
+.user {
+	width: 6em;
+	height: 6em;
+	border-radius: 50%;
+	border: 1px solid var(--colorPagina);
+	margin: auto;
+}
+
+.user img {
+	width: 5.9em;
+	height: 5.9em;
+	border-radius: 50%;
+}
+
+.menu-bar {
+	position: fixed;
+	top: 73px;
+	font-size: 36px;
+	margin-left:20px;
+	cursor: pointer;
+	z-index:99999;
+}
+
+#caja-contenedora {
+	position: relative;
+	top: 0px;
+	left: 0;
+	width: 100%;
+	padding-top: 20px;
+	background: rgba(255, 255, 255, .9);
+	transition: all 0.5s;
+	overflow: hidden;
+	z-index: 60;
+}
+
+.abrir {
+	margin-left: -216px;
+}
+
+@media(min-width:1024px) {
+	.menu-bar {
+		top: 108px;
+	}
+	.abrir {
+		margin-left: -276px;
+	}
+	#caja-contenedora {
+		padding-top: 60px;
+	}
+}

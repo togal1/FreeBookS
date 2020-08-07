@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+/* CSS Documento */
+
+.modalImg {
+	position: absolute;
+	margin: auto;
+	padding: 2%;
+	border: 3px double #000;
+	background: var(--colorBlanco);
+	width: 90%;
+	right: 0;
+	left: 0;
+	display: none;
+	z-index: 999;
+	transition: all .5s;
+	transform: translateY(-100%);
+}
+
+.modalImg h2 {
+	display: block;
+	text-align: center;
+	padding: 20px;
+}
+
+.silderImg {
+	position: relative;
+	min-width: 200px;
+	max-width: 700px;
+	height: 70vh;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+.silderImg ul {
+	padding: 0;
+	display: flex;
+}
+
+.silderImg img {
+	position: absolute;
+	top: 5%;
+	left: 10%;
+	height: 80%;
+	width: 80%;
+	opacity: 0;
+	transition: all .9s;
+	object-fit: scale-down;
+}
+
+.silderImg input[type="radio"] {
+	position: relative;
+	z-index: 50;
+	margin: 0 40px;
+}
+
+.silderImg input[type="radio"]:checked~img {
+	opacity: 1;
+}
+
+.cerrarImg {
+	position: fixed;
+	color: var(--colorBlanco);
+	font-size: 27px;
+	background: rgba(138, 74, 135, .5);
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 50%;
+	border: var(--colorBlanco) 1px double;
+	padding: 0 0 0 9px;
+	top: 5px;
+	right: 5px;
+	cursor: pointer;
+}
+
+.cerrarImg:hover {
+	background: rgba(138, 74, 135, .9);
+	border: #000 1px double;
+	color: #CCC;
+}
+
+#modalImg .contModalImg article {
+	padding: 15px 0 0 0;
+}
+
+.silderImg input {
+	height: 30px;
+	width: 30px;
+}
